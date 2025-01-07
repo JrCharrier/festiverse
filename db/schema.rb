@@ -70,7 +70,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_07_113326) do
     t.text "line_up"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
     t.string "image_banner"
     t.string "address"
   end

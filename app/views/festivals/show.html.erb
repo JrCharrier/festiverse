@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-top align-items-start text-center" style="min-height: 100vh; color: black;">
+  <div class="row w-100 justify-content-center align-items-center mx-0">
+    <div class="col-12 px-0 mt-5">
+      <h2 class="mb-0" style="font-weight: 700; font-size: 2rem;">
+        Festiverse
+      </h2>
+      <div class="text-center mt-5 mb-4">
+        <% if @festival.images.attached? %>
+          <%= image_tag(@festival.images.first, alt: @festival.name, class: "img-fluid w-100") %>
+        <% else %>
+          <p>Image non disponible</p>
+        <% end %>
+      </div>
+      <div class="text-start ms-4">
+        <%= @festival.name %>
+      </div>
+      <div class="text-start ms-4">
+        <%= @festival.start_date %>
+      </div>
+      <div class="text-start ms-4">
+        <%= @festival.end_date %>
+      </div>
+    </div>
+  </div>
+</div>
