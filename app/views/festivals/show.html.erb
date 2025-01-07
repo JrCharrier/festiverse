@@ -20,6 +20,14 @@
       <div class="text-start ms-4">
         <%= @festival.end_date %>
       </div>
+      <div class="text-start ms-4">
+        <%= @festival.address %>
+      </div>
+      <div class="text-start ms-4">
+        <% @festival.genre.each do |genre| %>
+          <span class="badge bg-primary me-2"><%= genre %></span>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
