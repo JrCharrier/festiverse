@@ -8,7 +8,7 @@ puts 'Creating festivals...'
 festival1 = Festival.new(name: 'We Love Green 2025',
                 start_date: Date.new(2025, 6, 6),
                 end_date: Date.new(2025, 6, 8),
-                genre: "Pop, Rap, Electro, House, Techno, Rock",
+                genre: ["Pop", "Rap", "Electro", "House", "Techno", "Rock"],
                 description: "WE LOVE GREEN, PIONNIER DES FESTIVALS RESPONSABLES ! Plus qu’un festival, We Love Green est
                 depuis 10 ans un événement référence dans le développement durable et l’industrie musicale.
                 Un savant mélange de fête et d’engagement, le tout porté par une programmation toujours plus
@@ -39,7 +39,7 @@ festival1.images.attach([
 festival2 = Festival.new(name: 'Le Jardin du Michel 2025',
                 start_date: Date.new(2025, 5, 29),
                 end_date: Date.new(2025, 6, 1),
-                genre: "Rap, Electro, Rock, Métal, Punk, Reggae",
+                genre: ["Rap", "Electro", "Rock", "Métal", "Punk", "Reggae"],
                 description: "Le Jardin du Michel, ou JDM pour les intimes, est un festival de musiques actuelles implanté à Toul et Dommartin-Lès-Toul en Meurthe-et-Moselle.
                 Cet événement prend place chaque année fin mai/début juin à l’aube de la saison estivale et réunit près de 18 000 personnes sur trois jours. Un camping installé
                 sur place pour l’occasion offre également à près de 4 000 festivaliers la possibilité de prolonger l’ambiance festive du festival après les concerts.
@@ -72,7 +72,7 @@ festival2.images.attach([
 festival3 = Festival.new(name: 'Festival Marsatac - 27ème Édition',
                 start_date: Date.new(2025, 6, 13),
                 end_date: Date.new(2025, 6, 15),
-                genre: "Rap, Electro, Techno, House, Rock, Métal, Punk, Reggae",
+                genre: ["Rap", "Electro", "Techno", "House", "Rock", "Métal", "Punk", "Reggae"],
                 description: "C’est le retour du festival Marsatac dans toute sa splendeur !
                 Cette édition 2025 se déroulera les 13 et 14 juin prochains dans LE plus beau parc de la ville, le Parc Borély ! Hey on est Marseillais ou on l’est pas ?
                 --
