@@ -9,7 +9,11 @@
           <%= festival.name %>
           <%= festival.start_date %>
           <%= festival.end_date %>
-          <%= festival.image_url %>
+          <% if festival.image.attached? %>
+            <%= image_tag festival.image, alt: festival.name, class: "festival-image" %>
+          <% else %>
+            <p>Image non disponible</p>
+          <% end %>
         <% end %>
       </div>
     </div>
