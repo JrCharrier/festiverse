@@ -1,4 +1,4 @@
-<section class="vh-100 gradient-custom">
+<section class="vh-100 login-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -8,35 +8,23 @@
             <div class="mb-md-5 mt-md-4 pb-5">
 
               <h2 class="fw-bold mb-2 text-uppercase">Log In</h2>
-              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+              <p class="text-white-50 mb-5">Please enter your login and password</p>
 
               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <div data-mdb-input-init class="form-outline form-white mb-4">
+                <div data-mdb-input-init class="form-outline mb-4">
                   <%= f.input :email,
-                              required: false,
+                              required: true,
                               autofocus: true,
                               label: false,
                               input_html: { class: "form-control form-control-lg", placeholder: "Email", autocomplete: "email" } %>
-                  <label class="form-label text-white" for="user_email">Email</label>
                 </div>
 
-                <div data-mdb-input-init class="form-outline form-white mb-4">
+                <div data-mdb-input-init class="form-outline mb-4">
                   <%= f.input :password,
-                              required: false,
+                              required: true,
                               label: false,
                               input_html: { class: "form-control form-control-lg", placeholder: "Password", autocomplete: "current-password" } %>
-                  <label class="form-label text-white" for="user_password">Password</label>
                 </div>
-
-                <% if devise_mapping.rememberable? %>
-                  <div class="form-check mb-4">
-                    <%= f.input :remember_me,
-                                as: :boolean,
-                                label: "Remember me",
-                                input_html: { class: "form-check-input", id: "remember_me" },
-                                label_html: { class: "form-check-label" } %>
-                  </div>
-                <% end %>
 
                 <p class="small mb-5 pb-lg-2">
                   <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-white-50" %>

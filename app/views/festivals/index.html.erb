@@ -7,7 +7,11 @@
       <div class="text-center mb-4">
         <% @festivals.each do |festival| %>
           <div class="card-index mb-3">
-            <%= image_tag("festival1.png", alt: "img-room", class: "card-image") %>
+            <% if festival.image.attached? %>
+              <%= image_tag("festival1.png", alt: "img-room", class: "card-image") %>
+            <% else %>
+              <p>Image non disponible</p>
+            <% end %>
             <div class="card-body" style="padding: 15px; text-align: left;">
               <h5 class="card-title" style="font-weight: 600; font-size: 1.25rem; margin-bottom: 10px;">
                 <%= festival.name %>
@@ -18,8 +22,3 @@
               </p>
             </div>
           </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
