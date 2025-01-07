@@ -5,8 +5,8 @@
         Festiverse
       </h2>
       <div class="text-center mt-5 mb-4">
-        <% if @festival.image.attached? %>
-          <%= image_tag @festival.image, alt: @festival.name, class: "img-fluid w-100" %>
+        <% if @festival.images.attached? %>
+          <%= image_tag(@festival.images.first, alt: @festival.name, class: "img-fluid w-100") %>
         <% else %>
           <p>Image non disponible</p>
         <% end %>
