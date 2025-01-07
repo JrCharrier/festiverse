@@ -6,13 +6,8 @@
       </h2>
       <div class="text-center mb-4">
         <% @festivals.each do |festival| %>
-          <div class="card-index mb-3">
-            <% if festival.image.attached? %>
-              <%= image_tag("festival1.png", alt: "img-room", class: "card-image") %>
-            <% else %>
-              <p>Image non disponible</p>
-            <% end %>
-            <div class="card-body" style="padding: 15px; text-align: left;">
+          <div class="card-index mb-3" style="display: flex; flex-direction: row; align-items: center;">
+            <div class="card-body" style="padding: 15px; text-align: left; flex: 1;">
               <h5 class="card-title" style="font-weight: 600; font-size: 1.25rem; margin-bottom: 10px;">
                 <%= festival.name %>
               </h5>
@@ -21,4 +16,16 @@
                 <strong>To:</strong> <%= festival.end_date %>
               </p>
             </div>
+            <div style="flex-shrink: 0; margin-left: 15px;">
+             <% if festival.images.attached? %>
+               <%= image_tag festival.images.last, alt: festival.name, class: "card-image") %>
+              <% else %>
+                <p>Image non disponible</p>
+              <% end %>
+            </div>
           </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
