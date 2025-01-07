@@ -2,13 +2,13 @@
   <div class="row w-100 justify-content-center align-items-center">
     <div class="col-12 col-md-8">
       <h2 class="mb-0" style="font-weight: 700; font-size: 2rem;">
-        Homepage
+        Index
       </h2>
       <div class="text-center mb-4">
         <% @festivals.each do |festival| %>
           <%= festival.name %>
           <%= festival.start_date %>
-          <%= festivale.end_date %>
+          <%= festival.end_date %>
           <%= festival.image_url %>
         <% end %>
       </div>
