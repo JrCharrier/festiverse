@@ -17,12 +17,10 @@
               </p>
             </div>
             <div style="flex-shrink: 0; margin-left: 15px;">
-              <% if festival.image.attached? %>
-                <%= image_tag(festival.image, alt: "Festival Image", class: "card-image") %>
+             <% if festival.images.attached? %>
+               <%= image_tag(festival.images.last, alt: festival.name, class: "card-image") %>
               <% else %>
-                <div class="card-image-placeholder" style="width: 150px; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #888;">
-                  Image non disponible
-                </div>
+                <p>Image non disponible</p>
               <% end %>
             </div>
           </div>
