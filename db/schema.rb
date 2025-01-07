@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_07_113326) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_07_150352) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_07_113326) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
-    t.string "genre"
+    t.string "genre", default: [], array: true
     t.text "description"
     t.string "image_url"
     t.text "line_up"
@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_07_113326) do
     t.datetime "updated_at", null: false
     t.string "image_banner"
     t.string "address"
+    t.string "genres", default: [], array: true
   end
 
   create_table "my_festivals", force: :cascade do |t|

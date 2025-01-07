@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-top align-items-start text-center" style="min-height: 100vh; color: black;">
+  <div class="row w-100 justify-content-center align-items-center mx-0">
+    <div class="col-12 px-0 mt-5">
+      <h2 class="mb-0" style="font-weight: 700; font-size: 2rem;">
+        Festiverse
+      </h2>
+      <div class="text-center mt-5 mb-3">
+        <% if @festival.images.attached? %>
+          <%= image_tag(@festival.images.first, alt: @festival.name, class: "img-fluid custom-border-top w-100") %>
+        <% else %>
+          <p>Image non disponible</p>
+        <% end %>
+      </div>
+      <div class="container-fluid text-start">
+        <div>
+          <%= @festival.name %>
+        </div>
+        <div>
+          <%= @festival.start_date %>
+        </div>
+        <div>
+          <%= @festival.end_date %>
+        </div>
+        <div>
+          <%= @festival.address %>
+        </div>
+        <div class="text-start d-flex flex-wrap mt-3">
+          <% @festival.genre.each do |genre| %>
+            <span class="rounded-pill login-custom text-white px-3 py-2 me-2 mb-2"><%= genre %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

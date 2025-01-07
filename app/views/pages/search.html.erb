@@ -1,0 +1,20 @@
+<div class="container-fluid d-flex justify-content-center align-items-center text-center" style="min-height: 100vh; color: black;">
+  <div class="row w-100 justify-content-center align-items-top">
+    <div class="col-12 col-md-8">
+    <div class="row justify-content-center">
+          <%= form_with url: festivals_path, method: :get, class: "d-flex", id:"search-form", remote: true do %>
+            <div class="input-group" style="width: 100px;">
+              <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  style: "border-radius: 32px",
+                  placeholder: "Recherchez un Festival" %>
+              <div class="input-group-append" button>
+                <%= submit_tag "Rechercher", class: "btn btn-home" %>
+              </div>
+            </div>
+          <% end %>
+      </div>
+  </div>
+</div>
+</div>
