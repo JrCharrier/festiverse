@@ -18,7 +18,7 @@
             </div>
             <div style="flex-shrink: 0; margin-left: 15px;">
              <% if festival.images.attached? %>
-               <%= image_tag festival.images.last, alt: festival.name, class: "card-image") %>
+               <%= image_tag(festival.images.last, alt: festival.name, class: "card-image") %>
               <% else %>
                 <p>Image non disponible</p>
               <% end %>
