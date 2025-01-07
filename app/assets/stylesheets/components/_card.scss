@@ -6,9 +6,26 @@
 }
 
 .card-image {
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   object-fit: cover;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin: 0;
+  font-size: small;
+}
+
+.card-body {
+  padding: 12px;
+  text-align: left;
+  flex: 1;
 }
