@@ -2,8 +2,9 @@
   <div class="row w-100 justify-content-center align-items-center">
     <div class="col-12 col-md-8">
       <h2 class="mb-0" style="font-weight: 700; font-size: 2rem;">
-        Profile
+        <%= @user.first_name %> <%= @user.last_name %>
       </h2>
+         <%= image_tag('https://img.freepik.com/vecteurs-premium/icone-profil-utilisateur-icone-avatar-personne-symbole-profil-silhouette-genre-neutre-bouton-rond-photo-avatar-illustration-vectorielle-image-stock_797523-1722.jpg', class: 'avatar-profile') %>
       <div class="text-center mb-4">
         <p class="mb-3">This is le profile</p>
       </div>

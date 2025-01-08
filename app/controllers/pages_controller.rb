@@ -3,12 +3,13 @@ class PagesController < ApplicationController
   end
 
   def search
-   
+
   end
 
   def dashboard
   end
 
   def profile
+    @user = current_user
   end
 end
