@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :favorites
+  has_many :my_festivals
   has_many :festivals, through: :favorites
   has_many :festivals, through: :my_festivals
 
