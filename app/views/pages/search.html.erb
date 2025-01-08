@@ -1,20 +1,33 @@
-<div class="container-fluid d-flex justify-content-center align-items-center text-center" style="min-height: 100vh; color: black;">
-  <div class="row w-100 justify-content-center align-items-top">
+<div class="container-fluid text-center" style="min-height: 100vh; color: black;">
+
+  <div class="row justify-content-center py-4">
     <div class="col-12 col-md-8">
-    <div class="row justify-content-center">
-          <%= form_with url: festivals_path, method: :get, class: "d-flex", id:"search-form", remote: true do %>
-            <div class="input-group" style="width: 100px;">
-              <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-control",
-                  style: "border-radius: 32px",
-                  placeholder: "Recherchez un Festival" %>
-              <div class="input-group-append" button>
-                <%= submit_tag "Rechercher", class: "btn btn-home" %>
-              </div>
+      <%= form_with url: festivals_path, method: :get, class: "d-flex justify-content-center", id: "search-form", remote: true do %>
+        <div class="input-group" style="width: 300px;">
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              style: "border-radius: 32px;",
+              placeholder: "Find a Festival" %>
+          <div class="input-group-append">
+            <%= submit_tag "Search", class: "btn btn-home" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="cards-index d-flex flex-wrap justify-content-center">
+        <% Festival.genres.each do |genre| %>
+          <%= link_to category_path(genre), class: "card-category m-2", style: "background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)); width: 100px; height: 100px;" do %>
+            <div class="card-content d-flex justify-content-center align-items-center h-100">
+              <h5 class="card-title" style="color: white; font-weight: bold;"><%= genre.upcase %></h5>
             </div>
           <% end %>
+        <% end %>
       </div>
+    </div>
   </div>
-</div>
 </div>
