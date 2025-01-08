@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :my_festivals, only: [:update]
 
   get "search", to: "pages#search", as: :search
+  get "categories/:genre", to: "festivals#category", as: :category
 end
