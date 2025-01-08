@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
   resources :festivals
 
+  resources :my_festivals, only: [:update]
+
   get "search", to: "pages#search", as: :search
 end
