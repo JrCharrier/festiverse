@@ -29,6 +29,12 @@
             <span class="rounded-pill login-custom text-white px-3 py-2 me-2 mb-2"><%= genre %></span>
           <% end %>
         </div>
+        <div class="mt-3">
+          <% button_class = current_user.my_festivals.exists?(festival_id: @festival.id) ? 'btn-success' : 'btn-secondary' %>
+          <%= button_to "Participer", my_festival_path(@festival),
+                        method: :patch,
+                        class: "btn #{button_class}" %>
+        </div>
       </div>
     </div>
   </div>
