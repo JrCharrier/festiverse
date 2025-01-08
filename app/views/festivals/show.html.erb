@@ -30,10 +30,13 @@
           <% end %>
         </div>
         <div class="mt-3">
-          <% button_class = current_user.my_festivals.exists?(festival_id: @festival.id) ? 'btn-success' : 'btn-secondary' %>
+          <% button_class = current_user.my_festivals.exists?(festival_id: @festival.id, favorite: true) ? 'btn-success' : 'btn-secondary' %>
+          <%= button_to "Ajouter aux favoris", my_festival_path(@festival, favorite: true),
+                        method: :patch, class: "btn #{button_class}" %>
+
+          <% button_class_participating = current_user.my_festivals.exists?(festival_id: @festival.id, participating: true) ? 'btn-info' : 'btn-secondary' %>
           <%= button_to "Participer", my_festival_path(@festival),
-                        method: :patch,
-                        class: "btn #{button_class}" %>
+                        method: :patch, class: "btn #{button_class_participating}" %>
         </div>
       </div>
     </div>
