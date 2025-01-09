@@ -1,43 +1,61 @@
-<div class="d-flex justify-content-top align-items-start text-center" style="min-height: 100vh; color: black;">
+<div class="d-flex justify-content-top align-items-start text-center" style="min-height: 100vh; background: linear-gradient(135deg, #4b0082, #2c003e, #000000); color: white;">
   <div class="row w-100 justify-content-center align-items-center mx-0">
-    <div class="col-12 px-0 mt-5">
-      <h2 class="mb-0" style="font-weight: 700; font-size: 2rem;">
+    <div class="col-12 px-3 mt-5">
+
+      <h2 class="mb-3" style="font-weight: 700; font-size: 2.5rem; color: #ffffff;">
         Festiverse
       </h2>
-      <div class="text-center mt-5 mb-3">
+
+      <div class="text-center mb-4" style="border-radius: 15px; overflow: hidden; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);">
         <% if @festival.images.attached? %>
           <%= image_tag(@festival.images.first, alt: @festival.name, class: "img-fluid custom-border-top w-100") %>
         <% else %>
-          <p>Image non disponible</p>
+          <p style="padding: 20px; background-color: #ffffff; color: #333;">Image non disponible</p>
         <% end %>
       </div>
-      <div class="container-fluid text-start">
-        <div>
+
+      <div class="container-fluid text-start p-4" style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);">
+        <div style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 600;">
           <%= @festival.name %>
         </div>
-        <div>
-          <%= @festival.start_date %>
+        <div style="font-size: 1rem; margin-bottom: 8px;">
+          <strong>Date de début :</strong> <%= @festival.start_date %>
         </div>
-        <div>
-          <%= @festival.end_date %>
+        <div style="font-size: 1rem; margin-bottom: 8px;">
+          <strong>Date de fin :</strong> <%= @festival.end_date %>
         </div>
-        <div>
-          <%= @festival.address %>
+        <div style="font-size: 1rem; margin-bottom: 15px;">
+          <strong>Lieu :</strong> <%= @festival.address %>
         </div>
+
         <div class="text-start d-flex flex-wrap mt-3">
           <% @festival.genres.each do |genre| %>
-            <span class="rounded-pill login-custom text-white px-3 py-2 me-2 mb-2"><%= genre %></span>
+            <span class="rounded-pill px-3 py-2 me-2 mb-2"
+              style="background: #800080;
+                     color: #ffffff;
+                     font-weight: 500;
+                     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
+              <%= genre %>
+            </span>
           <% end %>
         </div>
-        <div class="mt-3">
-          <% button_class = current_user.my_festivals.exists?(festival_id: @festival.id, favorite: true) ? 'btn-success' : 'btn-secondary' %>
-          <%= button_to "Ajouter aux favoris", my_festival_path(@festival, favorite: true),
-                        method: :patch, class: "btn #{button_class}" %>
 
-          <% button_class_participating = current_user.my_festivals.exists?(festival_id: @festival.id, participating: true) ? 'btn-info' : 'btn-secondary' %>
+        <div class="mt-4 d-flex justify-content-start gap-2">
+          <% button_class_participating = current_user.my_festivals.exists?(festival_id: @festival.id, participating: true) ? 'participate-active' : 'participate-inactive' %>
           <%= button_to "Participer", my_festival_path(@festival),
-                        method: :patch, class: "btn #{button_class_participating}" %>
+                        method: :patch, class: "btn participate-btn #{button_class_participating}" %>
+
+          <% button_class = current_user.my_festivals.exists?(festival_id: @festival.id, favorite: true) ? 'favori-active' : 'favori-inactive' %>
+          <%= button_to my_festival_path(@festival, favorite: true),
+              method: :patch,
+              class: "btn favori-btn #{button_class}" do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
         </div>
+      </div>
+
+      <div class="mt-4" style="height: 150px; border-radius: 15px; overflow: hidden; background: rgba(255, 255, 255, 0.1); box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);">
+        <p class="text-white text-center" style="line-height: 150px; margin: 0; font-size: 1.2rem;">Mapbox Placeholder</p>
       </div>
     </div>
   </div>
