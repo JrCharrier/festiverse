@@ -19,11 +19,11 @@
 
   <div class="row justify-content-center">
     <div class="col-12">
-      <div class="cards-index d-flex flex-wrap justify-content-center">
+      <div class="cards-index-search d-flex flex-wrap justify-content-center">
         <% Festival.genres.each do |genre| %>
-          <%= link_to category_path(genre), class: "card-category m-2", style: "background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)); width: 100px; height: 100px;" do %>
-            <div class="card-content d-flex justify-content-center align-items-center h-100">
-              <h5 class="card-title" style="color: white; font-weight: bold;"><%= genre.upcase %></h5>
+          <%= link_to category_path(genre), class: "card-category-search m-2", style: "background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)); width: 100px; height: 100px;" do %>
+            <div class="card-content-search d-flex justify-content-center align-items-center h-100">
+              <h5 class="card-title-search" style="color: white; font-weight: bold;"><%= genre.upcase %></h5>
             </div>
           <% end %>
         <% end %>
