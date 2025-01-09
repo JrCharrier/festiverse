@@ -5,8 +5,7 @@
   padding-right: 24px;
   padding-left: 24px;
   padding-top: 4px;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }

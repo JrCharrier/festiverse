@@ -16,6 +16,7 @@ class FestivalsController < ApplicationController
 
   def category
     @genre = params[:genre].downcase
+    @genre_display = params[:genre].upcase
     @festivals = Festival.where("? = ANY (genres)", @genre)
 
     render :index
