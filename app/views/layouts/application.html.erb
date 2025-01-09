@@ -16,8 +16,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1">
+      <%= yield %>
+    </main>
     <%= render partial: 'shared/navbar' %>
   </body>
 </html>

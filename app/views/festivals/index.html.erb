@@ -2,7 +2,7 @@
   <div class="row w-100 justify-content-center align-items-center">
     <div class="col-12 col-md-8">
       <h2 class="mb-1" style="font-weight: 700; font-size: 2rem;">
-        <%= @genre || "Tous les Festivals" %>
+        <%= @genre_display || "Tous les Festivals" %>
       </h2>
       <div class="text-center mb-4">
          <% if @festivals.any? %>
