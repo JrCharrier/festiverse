@@ -1,0 +1,31 @@
+.participate-btn {
+  background-color: #39ff14;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 20px;
+  box-shadow: 0 0 15px #39ff14;
+  font-size: 1rem;
+}
+
+.participate-active {
+  background-color: #228b22;
+}
+
+.favori-btn {
+  background-color: #c71585;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: 0 0 15px #c71585;
+  padding: 0;
+}
+
+.favori-active {
+  background-color: #800000;
+}
